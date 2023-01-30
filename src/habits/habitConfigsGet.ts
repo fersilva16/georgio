@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon';
 
 import { config } from '../config';
-import { notion } from '../notion';
+import { notion } from '../notion/notion';
 
 export type HabitConfig = {
   name: string;
