@@ -21,10 +21,13 @@
     "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv-safe": "^8.2.0",
     "luxon": "3.2.1",
     "tsx": "^3.12.2"
   },
   "devDependencies": {
+    "@types/dotenv-safe": "^8.1.2",
     "@types/luxon": "3.2.0",
     "@types/node": "18.11.18",
     "@typescript-eslint/eslint-plugin": "5.48.1",

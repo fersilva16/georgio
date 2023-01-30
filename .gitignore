@@ -30,4 +30,4 @@ npm-debug.log*
 # vercel
 .vercel
 
-.direnv
+.env
