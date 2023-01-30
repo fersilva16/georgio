@@ -21,6 +21,7 @@
     "type-check": "tsc --project tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.3",
     "discord.js": "^14.7.1",
     "dotenv-safe": "^8.2.0",
     "luxon": "3.2.1",
