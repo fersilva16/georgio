@@ -1,13 +1,15 @@
 import { DateTime } from 'luxon';
 
 import { config } from '../config';
+import type { DateConfig } from '../dateConfig/DateConfig';
+import { parseDateConfig } from '../dateConfig/parseDateConfig';
 import { notion } from '../notion/notion';
 
 export type HabitConfig = {
   name: string;
   startDate: DateTime;
-  delay: number;
-  duration: number;
+  delay: DateConfig;
+  duration: DateConfig;
 };
 
 export const habitConfigsGet = async (): Promise<HabitConfig[]> => {
@@ -18,7 +20,9 @@ export const habitConfigsGet = async (): Promise<HabitConfig[]> => {
   return habitConfigs.results.map((page: any) => ({
     name: page.properties['Name']?.title[0].text.content,
     startDate: DateTime.fromISO(page.properties['Start date'].date.start),
-    delay: page.properties['Delay'].number,
-    duration: page.properties['Duration'].number,
+    delay: parseDateConfig(page.properties['Delay'].rich_text[0].text.content),
+    duration: parseDateConfig(
+      page.properties['Duration'].rich_text[0].text.content,
+    ),
   }));
 };

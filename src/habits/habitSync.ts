@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import { habitConfigsGet } from './habitConfigsGet';
 import { habitCreate } from './habitCreate';
 import { shouldCreateHabit } from './shouldCreateHabit';
+import { dateConfigToDays } from '../dateConfig/dateConfigToDays';
 
 export const habitSync = async () => {
   const habitConfigs = await habitConfigsGet();
@@ -17,10 +18,12 @@ export const habitSync = async () => {
       continue;
     }
 
+    const durationInDays = dateConfigToDays(habitConfig.duration);
+
     const startDate = DateTime.now().startOf('day');
     const endDate =
-      habitConfig.duration > 1
-        ? startDate.plus({ days: habitConfig.duration - 1 })
+      durationInDays > 1
+        ? startDate.plus({ days: durationInDays - 1 })
         : undefined;
 
     await habitCreate(habitConfig.name, startDate, endDate);
