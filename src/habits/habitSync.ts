@@ -6,6 +6,9 @@ import { shouldCreateHabit } from './shouldCreateHabit';
 import { dateConfigToDays } from '../dateConfig/dateConfigToDays';
 
 export const habitSync = async () => {
+  // eslint-disable-next-line no-console
+  console.log('Syncing habits');
+
   const habitConfigs = await habitConfigsGet();
 
   for (const habitConfig of habitConfigs) {
