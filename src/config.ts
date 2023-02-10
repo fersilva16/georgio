@@ -1,8 +1,10 @@
 import { config as dotenv } from 'dotenv-safe';
 
-dotenv({
-  allowEmptyValues: true,
-});
+if (process.env.NODE_ENV === 'development') {
+  dotenv({
+    allowEmptyValues: true,
+  });
+}
 
 export const config = {
   DISCORD_BOT_TOKEN: process.env.DISCORD_BOT_TOKEN as string,

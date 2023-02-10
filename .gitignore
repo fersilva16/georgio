@@ -6,12 +6,8 @@ node_modules/
 # testing
 coverage/
 
-# next.js
-.next/
-out/
-
 # production
-build/
+dist/
 *.tsbuildinfo
 
 # misc
@@ -27,7 +23,5 @@ npm-debug.log*
 .env.test.local
 .env.production.local
 
-# vercel
-.vercel
-
+# env
 .env
