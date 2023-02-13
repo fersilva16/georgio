@@ -1,5 +1,5 @@
 import type { DateTime, DurationUnit } from 'luxon';
-import { parseText } from 'rrule/dist/esm/nlp';
+import { RRule } from 'rrule';
 
 import type { RRuleOptions } from './RRuleOptions';
 
@@ -9,7 +9,7 @@ export const rruleFromText = (
 ): RRuleOptions => {
   const [rruleText, duration] = text.split('for').map((s) => s.trim());
 
-  const options = parseText(rruleText);
+  const rrule = RRule.fromText(rruleText);
 
   const getDuration = () => {
     if (!duration) return {};
@@ -25,7 +25,7 @@ export const rruleFromText = (
   };
 
   return {
-    ...options,
+    ...rrule.options,
     ...getDuration(),
   };
 };
