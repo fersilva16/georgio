@@ -1,6 +1,6 @@
 import { config as dotenv } from 'dotenv-safe';
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   dotenv({
     allowEmptyValues: true,
   });
@@ -11,8 +11,7 @@ export const config = {
 
   NOTION_AUTH: process.env.NOTION_AUTH as string,
   NOTION_HABIT_DATABASE: process.env.NOTION_HABIT_DATABASE as string,
-  NOTION_HABIT_CONFIG_DATABASE: process.env
-    .NOTION_HABIT_CONFIG_DATABASE as string,
+  NOTION_HABIT_RULE_DATABASE: process.env.NOTION_HABIT_RULE_DATABASE as string,
 
   TZ: process.env.TZ as string,
   DEBUG: process.env.DEBUG === 'true',
