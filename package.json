@@ -29,6 +29,7 @@
     "dotenv-safe": "^8.2.0",
     "luxon": "3.2.1",
     "node-cron": "^3.0.2",
+    "rrule": "^2.7.2",
     "tsup": "^6.6.0"
   },
   "devDependencies": {

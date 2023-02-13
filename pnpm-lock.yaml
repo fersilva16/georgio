@@ -24,6 +24,7 @@ specifiers:
   node-cron: ^3.0.2
   nodemon: ^2.0.20
   prettier: 2.8.2
+  rrule: ^2.7.2
   simple-git-hooks: 2.8.1
   tsup: ^6.6.0
   tsx: ^3.12.2
@@ -35,6 +36,7 @@ dependencies:
   dotenv-safe: 8.2.0
   luxon: 3.2.1
   node-cron: 3.0.2
+  rrule: 2.7.2
   tsup: 6.6.0_typescript@4.9.4
 
 devDependencies:
@@ -3956,6 +3958,15 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
+
+  /rrule/2.7.2:
+    resolution:
+      {
+        integrity: sha512-NkBsEEB6FIZOZ3T8frvEBOB243dm46SPufpDckY/Ap/YH24V1zLeMmDY8OA10lk452NdrF621+ynDThE7FQU2A==,
+      }
+    dependencies:
+      tslib: 2.5.0
     dev: false
 
   /run-parallel/1.2.0:

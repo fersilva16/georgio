@@ -1,27 +1,27 @@
 import { DateTime } from 'luxon';
 
-import { habitConfigsGet } from './habitConfigsGet';
 import { habitCreate } from './habitCreate';
-import { shouldCreateHabit } from './shouldCreateHabit';
-import { dateConfigToDays } from '../dateConfig/dateConfigToDays';
+import { habitRuleGet } from './habitRuleGet';
+import { durationToDays } from '../rrule/durationToDays';
+import { rruleFromText } from '../rrule/rruleFromText';
+import { shouldCreateHabit } from '../rrule/shouldCreateHabit';
 
 export const habitSync = async () => {
   // eslint-disable-next-line no-console
   console.log('Syncing habits');
 
-  const habitConfigs = await habitConfigsGet();
+  const habitRules = await habitRuleGet();
 
-  for (const habitConfig of habitConfigs) {
-    const shouldCreate = shouldCreateHabit(
-      habitConfig.startDate,
-      habitConfig.delay,
-    );
+  for (const habitRule of habitRules) {
+    const options = rruleFromText(habitRule.startDate, habitRule.rule);
+
+    const shouldCreate = shouldCreateHabit(options);
 
     if (!shouldCreate) {
       continue;
     }
 
-    const durationInDays = dateConfigToDays(habitConfig.duration);
+    const durationInDays = durationToDays(options);
 
     const startDate = DateTime.now().startOf('day');
     const endDate =
@@ -29,16 +29,20 @@ export const habitSync = async () => {
         ? startDate.plus({ days: durationInDays - 1 })
         : undefined;
 
-    await habitCreate(habitConfig.name, startDate, endDate);
+    await habitCreate(habitRule.name, startDate, endDate);
 
     // eslint-disable-next-line no-console
     console.log(
-      'Habit',
-      `"${habitConfig.name}"`,
-      'created with',
-      `startDate "${startDate.toFormat('dd/MM/yyyy')}"`,
-      'and',
-      `startDate "${endDate?.toFormat('dd/MM/yyyy')}"`,
+      [
+        'Habit',
+        `"${habitRule.name} (${habitRule.rule})"`,
+        'created with',
+        `startDate "${startDate.toFormat('dd/MM/yyyy')}"`,
+        endDate && 'and',
+        endDate && `endDate "${endDate.toFormat('dd/MM/yyyy')}"`,
+      ]
+        .filter(Boolean)
+        .join(' '),
     );
   }
 };
