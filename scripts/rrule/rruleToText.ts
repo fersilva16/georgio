@@ -14,10 +14,14 @@ const defaults = {
       type: 'week',
     },
   },
+  monthly1st: {
+    freq: RRule.MONTHLY,
+    bymonthday: 1,
+  },
 } satisfies Record<string, Partial<RRuleOptions>>;
 
 (async () => {
-  const options = defaults['weeklyFor1Week'];
+  const options = defaults['monthly1st'];
 
   // eslint-disable-next-line no-console
   console.log(rruleToText(options));

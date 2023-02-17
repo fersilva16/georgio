@@ -1,10 +1,10 @@
 import { DateTime } from 'luxon';
-import { RRule } from 'rrule';
 
+import { rruleCreate } from './rruleCreate';
 import type { RRuleOptions } from './RRuleOptions';
 
 export const shouldCreateHabit = (options: RRuleOptions) => {
-  const rrule = new RRule(options);
+  const rrule = rruleCreate(options);
   const today = DateTime.now().startOf('day');
 
   const dates = rrule.between(

@@ -27,5 +27,6 @@ export const rruleFromText = (
   return {
     ...rrule.options,
     ...getDuration(),
+    dtstart: startDate.toJSDate(),
   };
 };
