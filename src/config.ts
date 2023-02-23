@@ -15,4 +15,6 @@ export const config = {
 
   TZ: process.env.TZ as string,
   DEBUG: process.env.DEBUG === 'true',
+
+  REPORT_CHANNEL: process.env.REPORT_CHANNEL as string,
 };
