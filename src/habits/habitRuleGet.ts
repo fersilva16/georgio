@@ -4,6 +4,7 @@ import { config } from '../config';
 import { notion } from '../notion/notion';
 
 export type HabitRule = {
+  icon: string;
   name: string;
   startDate: DateTime;
   rule: string;
@@ -15,6 +16,7 @@ export const habitRuleGet = async (): Promise<HabitRule[]> => {
   });
 
   return habitRules.results.map((page: any) => ({
+    icon: page.icon?.emoji,
     name: page.properties['Name']?.title[0].text.content,
     startDate: DateTime.fromISO(page.properties['Start date'].date.start),
     rule: page.properties['Rule'].rich_text[0].text.content,
