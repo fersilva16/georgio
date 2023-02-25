@@ -3,11 +3,30 @@ import type { DateTime } from 'luxon';
 import { config } from '../config';
 import { notion } from '../notion/notion';
 
-export const habitCreate = async (
-  title: string,
-  startDate: DateTime,
-  endDate?: DateTime,
-) => {
+type HabitCreateArgs = {
+  title: string;
+  startDate: DateTime;
+  endDate?: DateTime;
+  icon?: string;
+};
+
+export const habitCreate = async ({
+  title,
+  startDate,
+  endDate,
+  icon,
+}: HabitCreateArgs) => {
+  const getIconArgs = () => {
+    if (!icon) return {};
+
+    return {
+      icon: {
+        type: 'emoji',
+        emoji: icon as any,
+      },
+    } as any;
+  };
+
   await notion.pages.create({
     parent: {
       database_id: config.NOTION_HABIT_DATABASE,
@@ -29,5 +48,6 @@ export const habitCreate = async (
         },
       },
     },
+    ...getIconArgs(),
   });
 };

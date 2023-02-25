@@ -34,7 +34,12 @@ export const habitSync = async () => {
           ? startDate.plus({ days: durationInDays - 1 })
           : undefined;
 
-      await habitCreate(habitRule.name, startDate, endDate);
+      await habitCreate({
+        title: habitRule.name,
+        startDate,
+        endDate,
+        icon: habitRule.icon,
+      });
 
       // eslint-disable-next-line no-console
       console.log(
