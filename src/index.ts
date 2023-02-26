@@ -1,4 +1,6 @@
 import { config } from './config';
+import { commands } from './discord/commands/commands';
+import { registerCommands } from './discord/commands/registerCommands';
 import { discord } from './discord/discord';
 import { reportError } from './errors/reportError';
 import { habitCronStart } from './habits/habitCronStart';
@@ -8,6 +10,22 @@ discord.on('ready', () => {
   console.log('Georgio is online!');
 
   habitCronStart();
+
+  registerCommands();
+});
+
+discord.on('interactionCreate', (interaction) => {
+  if (!interaction.isCommand()) return;
+
+  const command = commands.find(
+    (command) => command.data.name === interaction.command?.name,
+  );
+
+  if (!command) {
+    return;
+  }
+
+  command.execute(interaction);
 });
 
 process.on('uncaughtException', reportError);
