@@ -8,6 +8,13 @@ export const registerCommands = async () => {
 
   const guild = await discord.guilds.fetch(config.GUILD_ID);
 
+  if (!guild) {
+    // eslint-disable-next-line no-console
+    console.log('Invalid guild id:', config.GUILD_ID);
+
+    return;
+  }
+
   for (const command of commands) {
     await guild.commands.create(command.data);
 

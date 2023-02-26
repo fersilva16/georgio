@@ -7,11 +7,11 @@ export const reportError = async (error: Error) => {
   // eslint-disable-next-line no-console
   console.log(error); // fallback
 
-  const channel = await discord.channels.fetch(config.REPORT_CHANNEL);
+  const channel = await discord.channels.fetch(config.REPORT_CHANNEL_ID);
 
   if (channel?.type !== ChannelType.GuildText) {
     // eslint-disable-next-line no-console
-    console.log('Invalid report channel:', config.REPORT_CHANNEL);
+    console.log('Invalid report channel:', config.REPORT_CHANNEL_ID);
 
     return;
   }
