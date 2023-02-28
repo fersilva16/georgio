@@ -15,6 +15,10 @@ export const habitSync = async () => {
 
   for (const habitRule of habitRules) {
     try {
+      if (!habitRule.active) {
+        continue;
+      }
+
       // eslint-disable-next-line no-console
       console.log(`Creating Habit "${habitRule.name}"`);
 
