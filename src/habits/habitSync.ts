@@ -1,6 +1,8 @@
 import { DateTime } from 'luxon';
 
 import { habitCreate } from './habitCreate';
+import { habitQuery } from './habitQuery';
+import { habitUpdate } from './habitUpdate';
 import { cursorProcessing } from '../cursor/cursorProcessing';
 import { reportError } from '../errors/reportError';
 import { habitRuleQuery } from '../habitRule/habitRuleQuery';
@@ -62,4 +64,34 @@ export const habitSync = async () => {
       reportError(error as Error);
     }
   });
+
+  await cursorProcessing(
+    habitQuery,
+    async (habit) => {
+      const yesterday = DateTime.now().minus({ day: 1 });
+
+      await habitUpdate({
+        id: habit.id,
+        doneAt: yesterday,
+      });
+    },
+    {
+      filter: {
+        and: [
+          {
+            property: 'Done',
+            checkbox: {
+              equals: true,
+            },
+          },
+          {
+            property: 'Done at',
+            date: {
+              is_empty: true,
+            },
+          },
+        ],
+      },
+    },
+  );
 };
