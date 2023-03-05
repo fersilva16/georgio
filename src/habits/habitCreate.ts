@@ -8,6 +8,7 @@ type HabitCreateArgs = {
   startDate: DateTime;
   endDate?: DateTime;
   icon?: string;
+  rule: string;
 };
 
 export const habitCreate = async ({
@@ -15,6 +16,7 @@ export const habitCreate = async ({
   startDate,
   endDate,
   icon,
+  rule,
 }: HabitCreateArgs) => {
   const getIconArgs = () => {
     if (!icon) return {};
@@ -46,6 +48,14 @@ export const habitCreate = async ({
           start: startDate.toISODate(),
           end: endDate?.toISODate(),
         },
+      },
+      Rule: {
+        type: 'relation',
+        relation: [
+          {
+            id: rule,
+          },
+        ],
       },
     },
     ...getIconArgs(),
