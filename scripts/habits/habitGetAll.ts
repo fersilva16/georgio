@@ -1,7 +1,7 @@
-import { habitGetAll } from '../../src/habits/habitGetAll';
+import { habitQuery } from '../../src/habits/habitQuery';
 
 (async () => {
-  const habits = await habitGetAll();
+  const habits = await habitQuery();
 
   // eslint-disable-next-line no-console
   console.log(habits);
