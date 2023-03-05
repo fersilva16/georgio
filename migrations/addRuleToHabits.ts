@@ -1,12 +1,12 @@
+import { cursorProcessing } from '../src/cursor/cursorProcessing';
 import { habitGetAll } from '../src/habits/habitGetAll';
-import type { HabitRule } from '../src/habits/habitRuleGet';
 import { habitRuleGet } from '../src/habits/habitRuleGet';
 import { habitUpdate } from '../src/habits/habitUpdate';
 
-const process = async (habitRules: HabitRule[], cursor?: string) => {
-  const habits = await habitGetAll(cursor);
+(async () => {
+  const habitRules = await habitRuleGet();
 
-  for (const habit of habits.items) {
+  await cursorProcessing(habitGetAll, async (habit) => {
     const habitRule = habitRules.find(
       (habitRule) => habitRule.name === habit.name,
     );
@@ -15,7 +15,7 @@ const process = async (habitRules: HabitRule[], cursor?: string) => {
       // eslint-disable-next-line no-console
       console.log(`No habit rule for ${habit.name} (${habit.id})`);
 
-      continue;
+      return;
     }
 
     await habitUpdate({
@@ -25,15 +25,5 @@ const process = async (habitRules: HabitRule[], cursor?: string) => {
 
     // eslint-disable-next-line no-console
     console.log(`Habit ${habit.name} (${habit.id}) updated!`);
-  }
-
-  if (habits.hasMore) {
-    await process(habitRules, habits.nextCursor);
-  }
-};
-
-(async () => {
-  const habitRules = await habitRuleGet();
-
-  await process(habitRules);
+  });
 })();
