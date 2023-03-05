@@ -43,6 +43,7 @@ export const habitSync = async () => {
         startDate,
         endDate,
         icon: habitRule.icon,
+        rule: habitRule.id,
       });
 
       // eslint-disable-next-line no-console
