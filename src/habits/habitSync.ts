@@ -1,8 +1,9 @@
 import { DateTime } from 'luxon';
 
 import { habitCreate } from './habitCreate';
-import { habitRuleGet } from './habitRuleGet';
+import { cursorProcessing } from '../cursor/cursorProcessing';
 import { reportError } from '../errors/reportError';
+import { habitRuleGetAll } from '../habitRule/habitRuleGetAll';
 import { durationToDays } from '../rrule/durationToDays';
 import { rruleFromText } from '../rrule/rruleFromText';
 import { shouldCreateHabit } from '../rrule/shouldCreateHabit';
@@ -11,12 +12,10 @@ export const habitSync = async () => {
   // eslint-disable-next-line no-console
   console.log('Syncing habits');
 
-  const habitRules = await habitRuleGet();
-
-  for (const habitRule of habitRules) {
+  await cursorProcessing(habitRuleGetAll, async (habitRule) => {
     try {
       if (!habitRule.active) {
-        continue;
+        return;
       }
 
       // eslint-disable-next-line no-console
@@ -27,7 +26,7 @@ export const habitSync = async () => {
       const shouldCreate = shouldCreateHabit(options);
 
       if (!shouldCreate) {
-        continue;
+        return;
       }
 
       const durationInDays = durationToDays(options);
@@ -62,5 +61,5 @@ export const habitSync = async () => {
     } catch (error) {
       reportError(error as Error);
     }
-  }
+  });
 };
