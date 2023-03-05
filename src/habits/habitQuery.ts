@@ -23,8 +23,8 @@ export const habitQuery = async ({
     endDate:
       habit.properties['Date'].date.end &&
       DateTime.fromISO(habit.properties['Date'].date.end),
-    Done: habit.properties['Done'].checkbox,
-    Rule: habit.properties['Rule'].relation[0]?.id,
+    done: habit.properties['Done'].checkbox,
+    rule: habit.properties['Rule'].relation[0]?.id,
   }));
 
   return withCursor(habits, results);
