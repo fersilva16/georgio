@@ -1,13 +1,13 @@
 import { cursorProcessing } from '../src/cursor/cursorProcessing';
 import { habitRuleGetAll } from '../src/habitRule/habitRuleGetAll';
-import { habitGetAll } from '../src/habits/habitGetAll';
+import { habitQuery } from '../src/habits/habitQuery';
 import { habitUpdate } from '../src/habits/habitUpdate';
 
 (async () => {
   const habitRules = await habitRuleGetAll();
 
-  await cursorProcessing(habitGetAll, async (habit) => {
-    const habitRule = habitRules.items.find(
+  await cursorProcessing(habitQuery, async (habit) => {
+    const habitRule = habitRules.find(
       (habitRule) => habitRule.name === habit.name,
     );
 

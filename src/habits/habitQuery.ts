@@ -7,7 +7,7 @@ import type { QueryFunctionOptions } from '../cursor/QueryFunction';
 import { withCursor } from '../cursor/withCursor';
 import { notion } from '../notion/notion';
 
-export const habitGetAll = async ({
+export const habitQuery = async ({
   cursor,
 }: QueryFunctionOptions = {}): Promise<Cursor<Habit>> => {
   const habits = await notion.databases.query({
