@@ -7,5 +7,6 @@ export type Habit = {
   startDate: DateTime;
   endDate: DateTime;
   done: boolean;
+  doneAt: DateTime;
   rule: string;
 };
