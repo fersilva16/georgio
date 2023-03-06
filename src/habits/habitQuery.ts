@@ -1,6 +1,5 @@
-import { DateTime } from 'luxon';
-
 import type { Habit } from './Habit';
+import { habitMap } from './habitMap';
 import { config } from '../config';
 import type { Cursor } from '../cursor/Cursor';
 import type { QueryFunctionOptions } from '../cursor/QueryFunction';
@@ -17,20 +16,7 @@ export const habitQuery = async ({
     start_cursor: cursor,
   });
 
-  const results = habits.results.map((habit: any) => ({
-    id: habit.id,
-    icon: habit.icon?.emoji,
-    name: habit.properties['Name']?.title[0].text.content,
-    startDate: DateTime.fromISO(habit.properties['Date'].date.start),
-    endDate:
-      habit.properties['Date'].date.end &&
-      DateTime.fromISO(habit.properties['Date'].date.end),
-    done: habit.properties['Done'].checkbox,
-    doneAt:
-      habit.properties['Done at'].date?.start &&
-      DateTime.fromISO(habit.properties['Done at'].date.start),
-    rule: habit.properties['Rule'].relation[0]?.id,
-  }));
+  const results = habits.results.map(habitMap);
 
   return withCursor(habits, results);
 };
