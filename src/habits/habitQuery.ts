@@ -9,8 +9,10 @@ import { notion } from '../notion/notion';
 
 export const habitQuery = async ({
   cursor,
+  ...options
 }: QueryFunctionOptions = {}): Promise<Cursor<Habit>> => {
   const habits = await notion.databases.query({
+    ...options,
     database_id: config.NOTION_HABIT_DATABASE,
     start_cursor: cursor,
   });
@@ -24,6 +26,9 @@ export const habitQuery = async ({
       habit.properties['Date'].date.end &&
       DateTime.fromISO(habit.properties['Date'].date.end),
     done: habit.properties['Done'].checkbox,
+    doneAt:
+      habit.properties['Done at'].date?.start &&
+      DateTime.fromISO(habit.properties['Done at'].date.start),
     rule: habit.properties['Rule'].relation[0]?.id,
   }));
 

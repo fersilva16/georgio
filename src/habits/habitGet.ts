@@ -17,6 +17,9 @@ export const habitGet = async (id: string): Promise<Habit> => {
       habit.properties['Date'].date.end &&
       DateTime.fromISO(habit.properties['Date'].date.end),
     done: habit.properties['Done'].checkbox,
+    doneAt:
+      habit.properties['Done at'].date?.start &&
+      DateTime.fromISO(habit.properties['Done at'].date.start),
     rule: habit.properties['Rule'].relation[0]?.id,
   };
 };
