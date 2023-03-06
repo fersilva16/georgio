@@ -1,6 +1,5 @@
-import { DateTime } from 'luxon';
-
 import type { HabitRule } from './HabitRule';
+import { habitRuleMap } from './habitRuleMap';
 import { config } from '../config';
 import type { Cursor } from '../cursor/Cursor';
 import type { QueryFunctionOptions } from '../cursor/QueryFunction';
@@ -17,14 +16,7 @@ export const habitRuleQuery = async ({
     start_cursor: cursor,
   });
 
-  const results = habitRules.results.map((habitRule: any) => ({
-    id: habitRule.id,
-    icon: habitRule.icon?.emoji,
-    name: habitRule.properties['Name']?.title[0].text.content,
-    startDate: DateTime.fromISO(habitRule.properties['Start date'].date.start),
-    rule: habitRule.properties['Rule'].rich_text[0].text.content,
-    active: habitRule.properties['Active'].checkbox,
-  }));
+  const results = habitRules.results.map(habitRuleMap);
 
   return withCursor(habitRules, results);
 };
