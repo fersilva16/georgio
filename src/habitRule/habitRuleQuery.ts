@@ -7,21 +7,23 @@ import type { QueryFunctionOptions } from '../cursor/QueryFunction';
 import { withCursor } from '../cursor/withCursor';
 import { notion } from '../notion/notion';
 
-export const habitRuleQuery = async (
-  options: QueryFunctionOptions = {},
-): Promise<Cursor<HabitRule>> => {
+export const habitRuleQuery = async ({
+  cursor,
+  ...options
+}: QueryFunctionOptions = {}): Promise<Cursor<HabitRule>> => {
   const habitRules = await notion.databases.query({
     ...options,
     database_id: config.NOTION_HABIT_RULE_DATABASE,
+    start_cursor: cursor,
   });
 
-  const results = habitRules.results.map((page: any) => ({
-    id: page.id,
-    icon: page.icon?.emoji,
-    name: page.properties['Name']?.title[0].text.content,
-    startDate: DateTime.fromISO(page.properties['Start date'].date.start),
-    rule: page.properties['Rule'].rich_text[0].text.content,
-    active: page.properties['Active'].checkbox,
+  const results = habitRules.results.map((habitRule: any) => ({
+    id: habitRule.id,
+    icon: habitRule.icon?.emoji,
+    name: habitRule.properties['Name']?.title[0].text.content,
+    startDate: DateTime.fromISO(habitRule.properties['Start date'].date.start),
+    rule: habitRule.properties['Rule'].rich_text[0].text.content,
+    active: habitRule.properties['Active'].checkbox,
   }));
 
   return withCursor(habitRules, results);
