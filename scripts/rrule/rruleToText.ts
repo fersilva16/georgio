@@ -18,6 +18,14 @@ const defaults = {
       type: 'week',
     },
   },
+  weekOnMondayTuesdayWednesdayThursday: {
+    freq: RRule.WEEKLY,
+    byweekday: [RRule.MO, RRule.TU, RRule.WE, RRule.TH],
+  },
+  weekOnSunday: {
+    freq: RRule.WEEKLY,
+    byweekday: RRule.SU,
+  },
   weeklyOnWednesday: {
     freq: RRule.WEEKLY,
     byweekday: RRule.WE,
@@ -26,10 +34,14 @@ const defaults = {
     freq: RRule.MONTHLY,
     bymonthday: 1,
   },
+  monthlyFirstSunday: {
+    freq: RRule.MONTHLY,
+    byweekday: RRule.SU.nth(1),
+  },
 } satisfies Record<string, Partial<RRuleOptions>>;
 
 (async () => {
-  const options = defaults['weekday'];
+  const options = defaults['monthlyFirstSunday'];
 
   // eslint-disable-next-line no-console
   console.log(rruleToText(options));
