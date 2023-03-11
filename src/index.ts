@@ -4,13 +4,13 @@ import { commands } from './discord/commands/commands';
 import { registerCommands } from './discord/commands/registerCommands';
 import { discord } from './discord/discord';
 import { reportError } from './errors/reportError';
-import { habitCronStart } from './habits/habitCronStart';
+import { habitSyncCronStart } from './habits/habitSyncCronStart';
 
 discord.on('ready', () => {
   // eslint-disable-next-line no-console
   console.log('Georgio is online!');
 
-  habitCronStart();
+  habitSyncCronStart();
 
   blinkOfTheDayCronStart();
 

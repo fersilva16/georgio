@@ -10,12 +10,12 @@ import { durationToDays } from '../rrule/durationToDays';
 import { rruleFromText } from '../rrule/rruleFromText';
 import { shouldCreateHabit } from '../rrule/shouldCreateHabit';
 
-export const habitSync = async () => {
-  // eslint-disable-next-line no-console
-  console.log('Syncing habits');
+export const habitSyncCron = async () => {
+  try {
+    // eslint-disable-next-line no-console
+    console.log('Syncing habits');
 
-  await cursorProcessing(habitRuleQuery, async (habitRule) => {
-    try {
+    await cursorProcessing(habitRuleQuery, async (habitRule) => {
       if (!habitRule.active) {
         return;
       }
@@ -60,38 +60,38 @@ export const habitSync = async () => {
           .filter(Boolean)
           .join(' '),
       );
-    } catch (error) {
-      reportError(error as Error);
-    }
-  });
+    });
 
-  await cursorProcessing(
-    habitQuery,
-    async (habit) => {
-      const yesterday = DateTime.now().minus({ day: 1 });
+    await cursorProcessing(
+      habitQuery,
+      async (habit) => {
+        const yesterday = DateTime.now().minus({ day: 1 });
 
-      await habitUpdate({
-        id: habit.id,
-        doneAt: yesterday,
-      });
-    },
-    {
-      filter: {
-        and: [
-          {
-            property: 'Done',
-            checkbox: {
-              equals: true,
-            },
-          },
-          {
-            property: 'Done at',
-            date: {
-              is_empty: true,
-            },
-          },
-        ],
+        await habitUpdate({
+          id: habit.id,
+          doneAt: yesterday,
+        });
       },
-    },
-  );
+      {
+        filter: {
+          and: [
+            {
+              property: 'Done',
+              checkbox: {
+                equals: true,
+              },
+            },
+            {
+              property: 'Done at',
+              date: {
+                is_empty: true,
+              },
+            },
+          ],
+        },
+      },
+    );
+  } catch (error) {
+    reportError(error as Error);
+  }
 };
