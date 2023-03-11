@@ -4,6 +4,7 @@ import { NodeHtmlMarkdown } from 'node-html-markdown';
 import { getBlinkOfTheDay } from './getBlinkOfTheDay';
 import { config } from '../config';
 import { discord } from '../discord/discord';
+import { reportError } from '../errors/reportError';
 
 export const blinkOfTheDayCron = async () => {
   try {

@@ -1,4 +1,3 @@
-import { blinkOfTheDayCronStart } from './blinkist/blinkOfTheDayCronStart';
 import { config } from './config';
 import { commands } from './discord/commands/commands';
 import { registerCommands } from './discord/commands/registerCommands';
@@ -11,8 +10,6 @@ discord.on('ready', () => {
   console.log('Georgio is online!');
 
   habitSyncCronStart();
-
-  blinkOfTheDayCronStart();
 
   registerCommands();
 });
