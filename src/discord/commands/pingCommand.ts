@@ -8,6 +8,7 @@ export const pingCommand: Command = {
 
   execute: async (interaction) => {
     await interaction.reply({
+      ephemeral: true,
       content: `🏓 Pong! ${Date.now() - interaction.createdTimestamp}ms`,
     });
   },
