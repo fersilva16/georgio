@@ -1,11 +1,13 @@
 import { DateTime } from 'luxon';
 
 import { habitCreate } from './habitCreate';
+import { habitGet } from './habitGet';
 import { habitQuery } from './habitQuery';
 import { habitUpdate } from './habitUpdate';
 import { cursorProcessing } from '../cursor/cursorProcessing';
 import { reportError } from '../errors/reportError';
 import { habitRuleQuery } from '../habitRule/habitRuleQuery';
+import { habitRuleUpdate } from '../habitRule/habitRuleUpdate';
 import { durationToDays } from '../rrule/durationToDays';
 import { rruleFromText } from '../rrule/rruleFromText';
 import { shouldCreateHabit } from '../rrule/shouldCreateHabit';
@@ -91,6 +93,40 @@ export const habitSyncCron = async () => {
         },
       },
     );
+
+    await cursorProcessing(habitRuleQuery, async (habitRule) => {
+      const habitId = habitRule.habits.at(-1);
+
+      if (!habitId) {
+        return;
+      }
+
+      const yesterday = DateTime.now().minus({ day: 1 });
+      const habit = await habitGet(habitId);
+
+      if (!habit.endDate.hasSame(yesterday, 'day')) {
+        return;
+      }
+
+      if (habit.doneAt) {
+        await habitRuleUpdate({
+          id: habitRule.id,
+          strike: 0,
+        });
+
+        return;
+      }
+
+      const strike = habitRule.strike + 1;
+      const biggestStrike =
+        strike > habitRule.biggestStrike ? strike : habitRule.biggestStrike;
+
+      await habitRuleUpdate({
+        id: habitRule.id,
+        strike,
+        biggestStrike,
+      });
+    });
   } catch (error) {
     reportError(error as Error);
   }
