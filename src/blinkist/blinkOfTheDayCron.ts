@@ -6,40 +6,44 @@ import { config } from '../config';
 import { discord } from '../discord/discord';
 
 export const blinkOfTheDayCron = async () => {
-  const blinkOfTheDay = await getBlinkOfTheDay();
+  try {
+    const blinkOfTheDay = await getBlinkOfTheDay();
 
-  if (!blinkOfTheDay) {
-    return;
-  }
+    if (!blinkOfTheDay) {
+      return;
+    }
 
-  const channel = await discord.channels.fetch(
-    config.BLINK_OF_THE_DAY_CHANNEL_ID,
-  );
-
-  if (channel?.type !== ChannelType.GuildText) {
-    // eslint-disable-next-line no-console
-    console.log(
-      'Invalid blink of the day channel:',
+    const channel = await discord.channels.fetch(
       config.BLINK_OF_THE_DAY_CHANNEL_ID,
     );
 
-    return;
-  }
+    if (channel?.type !== ChannelType.GuildText) {
+      // eslint-disable-next-line no-console
+      console.log(
+        'Invalid blink of the day channel:',
+        config.BLINK_OF_THE_DAY_CHANNEL_ID,
+      );
 
-  await channel.send({
-    embeds: [
-      new EmbedBuilder()
-        .setTitle(blinkOfTheDay.title)
-        .setDescription(
-          [
-            `**${blinkOfTheDay.subtitle}**`,
-            NodeHtmlMarkdown.translate(blinkOfTheDay.about),
-          ].join('\n\n'),
-        )
-        .setFooter({ text: blinkOfTheDay.author })
-        .setThumbnail(blinkOfTheDay.image)
-        .setColor('#2ce080')
-        .setTimestamp(new Date()),
-    ],
-  });
+      return;
+    }
+
+    await channel.send({
+      embeds: [
+        new EmbedBuilder()
+          .setTitle(blinkOfTheDay.title)
+          .setDescription(
+            [
+              `**${blinkOfTheDay.subtitle}**`,
+              NodeHtmlMarkdown.translate(blinkOfTheDay.about),
+            ].join('\n\n'),
+          )
+          .setFooter({ text: blinkOfTheDay.author })
+          .setThumbnail(blinkOfTheDay.image)
+          .setColor('#2ce080')
+          .setTimestamp(new Date()),
+      ],
+    });
+  } catch (error) {
+    reportError(error as Error);
+  }
 };
