@@ -7,9 +7,9 @@ export const habitMap = (habit: any): Habit => ({
   icon: habit.icon?.emoji,
   name: habit.properties['Name']?.title[0].text.content,
   startDate: DateTime.fromISO(habit.properties['Date'].date.start),
-  endDate:
-    habit.properties['Date'].date.end &&
-    DateTime.fromISO(habit.properties['Date'].date.end),
+  endDate: habit.properties['Date'].date.end
+    ? DateTime.fromISO(habit.properties['Date'].date.end)
+    : DateTime.fromISO(habit.properties['Date'].date.start),
   done: habit.properties['Done'].checkbox,
   doneAt:
     habit.properties['Done at'].date?.start &&

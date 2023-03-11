@@ -7,4 +7,7 @@ export type HabitRule = {
   startDate: DateTime;
   rule: string;
   active: boolean;
+  habits: string[];
+  strike: number;
+  biggestStrike: number;
 };
