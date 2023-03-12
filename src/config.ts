@@ -12,6 +12,7 @@ export const config = {
   NOTION_AUTH: process.env.NOTION_AUTH as string,
   NOTION_HABIT_DATABASE: process.env.NOTION_HABIT_DATABASE as string,
   NOTION_HABIT_RULE_DATABASE: process.env.NOTION_HABIT_RULE_DATABASE as string,
+  NOTION_SHOW_DATABASE: process.env.NOTION_SHOW_DATABASE as string,
 
   TZ: process.env.TZ as string,
   DEBUG: process.env.DEBUG === 'true',
@@ -20,4 +21,6 @@ export const config = {
   REPORT_CHANNEL_ID: process.env.REPORT_CHANNEL_ID as string,
   BLINK_OF_THE_DAY_CHANNEL_ID: process.env
     .BLINK_OF_THE_DAY_CHANNEL_ID as string,
+
+  TMDB_API_KEY: process.env.TMDB_API_KEY as string,
 };

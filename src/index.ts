@@ -4,12 +4,15 @@ import { registerCommands } from './discord/commands/registerCommands';
 import { discord } from './discord/discord';
 import { reportError } from './errors/reportError';
 import { habitSyncCronStart } from './habits/habitSyncCronStart';
+import { showEnrichCronStart } from './show/showEnrichCronStart';
 
 discord.on('ready', () => {
   // eslint-disable-next-line no-console
   console.log('Georgio is online!');
 
   habitSyncCronStart();
+
+  showEnrichCronStart();
 
   registerCommands();
 });
