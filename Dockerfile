@@ -9,4 +9,6 @@ COPY . .
 RUN pnpm install --prod --ignore-scripts
 RUN pnpm build
 
+EXPOSE 8080
+
 CMD pnpm start

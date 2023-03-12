@@ -16,6 +16,7 @@ export const config = {
 
   TZ: process.env.TZ as string,
   DEBUG: process.env.DEBUG === 'true',
+  PORT: parseInt(process.env.PORT || '8080'),
 
   GUILD_ID: process.env.GUILD_ID as string,
   REPORT_CHANNEL_ID: process.env.REPORT_CHANNEL_ID as string,
