@@ -9,7 +9,7 @@ import fetch from 'node-fetch';
     // eslint-disable-next-line no-console
     console.log(
       [
-        'Error: missing id',
+        'Error: missing url',
         'Usage: yarn tsx scripts/rss/getYoutubeRSS.ts <url>',
       ].join('\n'),
     );
