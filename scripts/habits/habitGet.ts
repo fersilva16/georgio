@@ -11,6 +11,8 @@ import { habitGet } from '../../src/habits/habitGet';
         'Usage: yarn tsx scripts/habits/habitGet.ts <id>',
       ].join('\n'),
     );
+
+    return;
   }
 
   const habit = await habitGet(id);

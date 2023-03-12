@@ -11,6 +11,8 @@ import { blocksGet } from '../../src/blocks/blocksGet';
         'Usage: yarn tsx scripts/blocks/blocksGet.ts <id>',
       ].join('\n'),
     );
+
+    return;
   }
 
   const blocks = await blocksGet(id);
