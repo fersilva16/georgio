@@ -1,6 +1,5 @@
 import Router from '@koa/router';
 import Koa from 'koa';
-import koaLogger from 'koa-logger';
 
 import { status } from './status/status';
 
@@ -10,7 +9,7 @@ const router = new Router();
 
 router.get('/status', status);
 
-app.use(koaLogger());
+// @todo: add logger filtering /status
 app.use(router.routes());
 
 export { app };
