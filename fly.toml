@@ -36,7 +36,7 @@ processes = []
     timeout = "2s"
 
   [[services.http_checks]]
-    interval = 300000
+    interval = 1800000
     grace_period = "5s"
     method = "get"
     path = "/status"
