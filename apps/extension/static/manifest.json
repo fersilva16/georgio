@@ -1,0 +1,38 @@
+{
+  "name": "@georgio/extension",
+  "description": "Georgio",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "commands": {},
+  "action": {
+    "default_icon": {
+      "16": "icon-16.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    },
+    "default_popup": "popup.html"
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": ["js/content.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/content.js"],
+
+      "run_at": "document_start"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; script-src-elem 'self' 'unsafe-inline' https://music.yandex.ru/;"
+  },
+  "permissions": ["tabs", "activeTab", "storage", "windows", "scripting"]
+}
