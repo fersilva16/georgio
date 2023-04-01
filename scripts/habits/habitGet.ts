@@ -1,4 +1,4 @@
-import { habitGet } from '../../src/habits/habitGet';
+import { habitGet } from '../../apps/bot/src/habits/habitGet';
 
 (async () => {
   const [id] = process.argv.slice(2);

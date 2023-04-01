@@ -1,7 +1,7 @@
 import { RRule } from 'rrule';
 
-import type { RRuleOptions } from '../../src/rrule/RRuleOptions';
-import { rruleToText } from '../../src/rrule/rruleToText';
+import type { RRuleOptions } from '../../apps/bot/src/rrule/RRuleOptions';
+import { rruleToText } from '../../apps/bot/src/rrule/rruleToText';
 
 const defaults = {
   daily: {

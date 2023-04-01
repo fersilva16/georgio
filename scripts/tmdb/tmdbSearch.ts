@@ -1,4 +1,4 @@
-import { tmdbSearch } from '../../src/tmdb/tmdbSearch';
+import { tmdbSearch } from '../../apps/bot/src/tmdb/tmdbSearch';
 
 (async () => {
   const [query] = process.argv.slice(2);

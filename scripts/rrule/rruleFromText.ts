@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-import { rruleFromText } from '../../src/rrule/rruleFromText';
+import { rruleFromText } from '../../apps/bot/src/rrule/rruleFromText';
 
 (async () => {
   const text = 'Every week for 1 week';

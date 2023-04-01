@@ -1,4 +1,4 @@
-import { notion } from '../../src/notion/notion';
+import { notion } from '../../apps/bot/src/notion/notion';
 
 (async () => {
   const pages = [

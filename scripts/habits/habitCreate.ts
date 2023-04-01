@@ -1,6 +1,6 @@
 import { DateTime } from 'luxon';
 
-import { habitCreate } from '../../src/habits/habitCreate';
+import { habitCreate } from '../../apps/bot/src/habits/habitCreate';
 
 (async () => {
   await habitCreate({
