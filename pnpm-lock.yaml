@@ -35,7 +35,6 @@ specifiers:
   node-fetch: ^3.3.1
   node-html-markdown: ^1.3.0
   node-themoviedb: ^0.2.8
-  nodemon: ^2.0.20
   prettier: 2.8.2
   puppeteer: ^19.7.3
   puppeteer-extra: ^3.3.6
@@ -88,7 +87,6 @@ devDependencies:
   inflection: 2.0.1
   nano-staged: 0.8.0
   node-fetch: 3.3.1
-  nodemon: 2.0.20
   prettier: 2.8.2
   simple-git-hooks: 2.8.1
   tsx: 3.12.2
@@ -1392,13 +1390,6 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /abbrev/1.1.1:
-    resolution:
-      {
-        integrity: sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==,
-      }
-    dev: true
-
   /accepts/1.3.8:
     resolution:
       {
@@ -1506,6 +1497,7 @@ packages:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
+    dev: false
 
   /arch/2.2.0:
     resolution:
@@ -1670,6 +1662,7 @@ packages:
         integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==,
       }
     engines: { node: '>=8' }
+    dev: false
 
   /bl/4.1.0:
     resolution:
@@ -1933,6 +1926,7 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: false
 
   /chownr/1.1.4:
     resolution:
@@ -2199,21 +2193,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.3
-    dev: true
-
-  /debug/3.2.7_supports-color@5.5.0:
-    resolution:
-      {
-        integrity: sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==,
-      }
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
-    dependencies:
-      ms: 2.1.3
-      supports-color: 5.5.0
     dev: true
 
   /debug/4.3.4:
@@ -3889,6 +3868,7 @@ packages:
         integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==,
       }
     engines: { node: '>=4' }
+    dev: false
 
   /has-flag/4.0.0:
     resolution:
@@ -4086,13 +4066,6 @@ packages:
         integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==,
       }
 
-  /ignore-by-default/1.0.1:
-    resolution:
-      {
-        integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==,
-      }
-    dev: true
-
   /ignore-walk/4.0.1:
     resolution:
       {
@@ -4217,6 +4190,7 @@ packages:
     engines: { node: '>=8' }
     dependencies:
       binary-extensions: 2.2.0
+    dev: false
 
   /is-boolean-object/1.1.2:
     resolution:
@@ -5197,42 +5171,13 @@ packages:
       got: 11.8.6
     dev: false
 
-  /nodemon/2.0.20:
-    resolution:
-      {
-        integrity: sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==,
-      }
-    engines: { node: '>=8.10.0' }
-    hasBin: true
-    dependencies:
-      chokidar: 3.5.3
-      debug: 3.2.7_supports-color@5.5.0
-      ignore-by-default: 1.0.1
-      minimatch: 3.1.2
-      pstree.remy: 1.1.8
-      semver: 5.7.1
-      simple-update-notifier: 1.1.0
-      supports-color: 5.5.0
-      touch: 3.1.0
-      undefsafe: 2.0.5
-    dev: true
-
-  /nopt/1.0.10:
-    resolution:
-      {
-        integrity: sha512-NWmpvLSqUrgrAC9HCuxEvb+PSloHpqVu+FqcO4eeF2h5qYRhA7ev6KvelyQAKtegUbC6RypJnlEOhd8vloNKYg==,
-      }
-    hasBin: true
-    dependencies:
-      abbrev: 1.1.1
-    dev: true
-
   /normalize-path/3.0.0:
     resolution:
       {
         integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==,
       }
     engines: { node: '>=0.10.0' }
+    dev: false
 
   /normalize-url/6.1.0:
     resolution:
@@ -5684,13 +5629,6 @@ packages:
       }
     dev: false
 
-  /pstree.remy/1.1.8:
-    resolution:
-      {
-        integrity: sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w==,
-      }
-    dev: true
-
   /pump/3.0.0:
     resolution:
       {
@@ -5928,6 +5866,7 @@ packages:
     engines: { node: '>=8.10.0' }
     dependencies:
       picomatch: 2.3.1
+    dev: false
 
   /regenerator-runtime/0.13.11:
     resolution:
@@ -6083,26 +6022,10 @@ packages:
       is-regex: 1.1.4
     dev: true
 
-  /semver/5.7.1:
-    resolution:
-      {
-        integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==,
-      }
-    hasBin: true
-    dev: true
-
   /semver/6.3.0:
     resolution:
       {
         integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==,
-      }
-    hasBin: true
-    dev: true
-
-  /semver/7.0.0:
-    resolution:
-      {
-        integrity: sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==,
       }
     hasBin: true
     dev: true
@@ -6188,16 +6111,6 @@ packages:
       }
     hasBin: true
     requiresBuild: true
-    dev: true
-
-  /simple-update-notifier/1.1.0:
-    resolution:
-      {
-        integrity: sha512-VpsrsJSUcJEseSbMHkrsrAVSdvVS5I96Qo1QAQ4FxQ9wXFcB+pjj7FB7/us9+GcgfW4ziHtYMc1J0PLczb55mg==,
-      }
-    engines: { node: '>=8.10.0' }
-    dependencies:
-      semver: 7.0.0
     dev: true
 
   /slash/3.0.0:
@@ -6407,6 +6320,7 @@ packages:
     engines: { node: '>=4' }
     dependencies:
       has-flag: 3.0.0
+    dev: false
 
   /supports-color/7.2.0:
     resolution:
@@ -6561,16 +6475,6 @@ packages:
       '@tokenizer/token': 0.3.0
       ieee754: 1.2.1
     dev: false
-
-  /touch/3.1.0:
-    resolution:
-      {
-        integrity: sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==,
-      }
-    hasBin: true
-    dependencies:
-      nopt: 1.0.10
-    dev: true
 
   /tr46/0.0.3:
     resolution:
@@ -6778,13 +6682,6 @@ packages:
       buffer: 5.7.1
       through: 2.3.8
     dev: false
-
-  /undefsafe/2.0.5:
-    resolution:
-      {
-        integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==,
-      }
-    dev: true
 
   /undici/5.16.0:
     resolution:
