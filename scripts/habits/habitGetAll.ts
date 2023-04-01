@@ -1,4 +1,4 @@
-import { habitQuery } from '../../src/habits/habitQuery';
+import { habitQuery } from '../../apps/bot/src/habits/habitQuery';
 
 (async () => {
   const habits = await habitQuery();

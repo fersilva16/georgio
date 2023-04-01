@@ -1,4 +1,4 @@
-import { blocksGetAll } from '../../src/blocks/blocksGetAll';
+import { blocksGetAll } from '../../apps/bot/src/blocks/blocksGetAll';
 
 (async () => {
   const [id] = process.argv.slice(2);

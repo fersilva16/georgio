@@ -1,4 +1,4 @@
-import { getBlinkOfTheDay } from '../../src/blinkist/getBlinkOfTheDay';
+import { getBlinkOfTheDay } from '../../apps/bot/src/blinkist/getBlinkOfTheDay';
 
 (async () => {
   const blinkOfTheDay = await getBlinkOfTheDay();

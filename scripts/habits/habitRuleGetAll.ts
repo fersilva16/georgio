@@ -1,4 +1,4 @@
-import { habitRuleGetAll } from '../../src/habitRule/habitRuleGetAll';
+import { habitRuleGetAll } from '../../apps/bot/src/habitRule/habitRuleGetAll';
 
 (async () => {
   const habitRules = await habitRuleGetAll();
