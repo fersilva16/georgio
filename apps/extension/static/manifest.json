@@ -6,7 +6,11 @@
   "background": {
     "service_worker": "js/background.js"
   },
-  "commands": {},
+  "commands": {
+    "save": {
+      "description": "Save page"
+    }
+  },
   "action": {
     "default_icon": {
       "16": "icon-16.png",

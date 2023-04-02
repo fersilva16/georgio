@@ -21,7 +21,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new DotenvWebpackPlugin({
-      path: path.join(__dirname, '.env.prod'),
+      path: path.join(__dirname, '.env'),
     }),
   ],
 });
