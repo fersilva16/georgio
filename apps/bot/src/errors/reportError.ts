@@ -1,9 +1,12 @@
+import * as Sentry from '@sentry/node';
 import { ChannelType, EmbedBuilder } from 'discord.js';
 
 import { config } from '../config';
 import { discord } from '../discord/discord';
 
 export const reportError = async (error: Error) => {
+  Sentry.captureException(error);
+
   // eslint-disable-next-line no-console
   console.log(error); // fallback
 

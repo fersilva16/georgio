@@ -1,9 +1,17 @@
+import * as Sentry from '@sentry/node';
+
 import { app } from './app';
 import { config } from './config';
 import { discord } from './discord/discord';
 import { reportError } from './errors/reportError';
 import { habitSyncCronStart } from './habits/habitSyncCronStart';
 import { showEnrichCronStart } from './show/showEnrichCronStart';
+
+if (config.SENTRY_DSN) {
+  Sentry.init({
+    dsn: config.SENTRY_DSN,
+  });
+}
 
 habitSyncCronStart();
 

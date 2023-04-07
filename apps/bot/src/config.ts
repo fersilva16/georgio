@@ -24,4 +24,6 @@ export const config = {
     .BLINK_OF_THE_DAY_CHANNEL_ID as string,
 
   TMDB_API_KEY: process.env.TMDB_API_KEY as string,
+
+  SENTRY_DSN: process.env.SENTRY_DSN as string | undefined,
 };
