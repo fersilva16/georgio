@@ -46,7 +46,7 @@
     "luxon": "3.2.1",
     "nano-staged": "0.8.0",
     "node-fetch": "^3.3.1",
-    "prettier": "2.8.2",
+    "prettier": "2.8.7",
     "rrule": "^2.7.2",
     "simple-git-hooks": "2.8.1",
     "tsx": "^3.12.2",
