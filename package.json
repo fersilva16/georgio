@@ -32,7 +32,6 @@
     "@typescript-eslint/parser": "5.57.1",
     "cheerio": "1.0.0-rc.12",
     "clipboardy": "^3.0.0",
-    "esbuild": "0.17.15",
     "eslint": "8.37.0",
     "eslint-config-prettier": "8.8.0",
     "eslint-import-resolver-node": "0.3.7",
