@@ -5,8 +5,8 @@ importers:
   .:
     devDependencies:
       '@types/luxon':
-        specifier: 3.2.0
-        version: 3.2.0
+        specifier: 3.3.0
+        version: 3.3.0
       '@typescript-eslint/eslint-plugin':
         specifier: 5.48.1
         version: 5.48.1(@typescript-eslint/parser@5.48.1)(eslint@8.37.0)(typescript@4.9.5)
@@ -53,8 +53,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       luxon:
-        specifier: 3.2.1
-        version: 3.2.1
+        specifier: 3.3.0
+        version: 3.3.0
       nano-staged:
         specifier: 0.8.0
         version: 0.8.0
@@ -101,8 +101,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       luxon:
-        specifier: 3.2.1
-        version: 3.2.1
+        specifier: 3.3.0
+        version: 3.3.0
       node-cron:
         specifier: ^3.0.2
         version: 3.0.2
@@ -129,8 +129,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       '@types/luxon':
-        specifier: 3.2.0
-        version: 3.2.0
+        specifier: 3.3.0
+        version: 3.3.0
       '@types/node':
         specifier: 18.15.11
         version: 18.15.11
@@ -1205,8 +1205,8 @@ packages:
       '@types/koa': 2.13.5
     dev: true
 
-  /@types/luxon@3.2.0:
-    resolution: {integrity: sha512-lGmaGFoaXHuOLXFvuju2bfvZRqxAqkHPx9Y9IQdQABrinJJshJwfNCKV+u7rR3kJbiqfTF/NhOkcxxAFrObyaA==}
+  /@types/luxon@3.3.0:
+    resolution: {integrity: sha512-uKRI5QORDnrGFYgcdAVnHvEIvEZ8noTpP/Bg+HeUzZghwinDlIS87DEenV5r1YoOF9G4x600YsUXLWZ19rmTmg==}
     dev: true
 
   /@types/mime@3.0.1:
@@ -4546,8 +4546,8 @@ packages:
     resolution: {integrity: sha512-Pn9cox5CsMYngeDbmChANltQl+5pi6XmTrraMSzhPmMBbmgcxmqWry0U3PGapCU1yB4/LqCcom7qhHZiF/jGfQ==}
     dev: false
 
-  /luxon@3.2.1:
-    resolution: {integrity: sha512-QrwPArQCNLAKGO/C+ZIilgIuDnEnKx5QYODdDtbFaxzsbZcc/a7WFq7MhsVYgRlwawLtvOUESTlfJ+hc/USqPg==}
+  /luxon@3.3.0:
+    resolution: {integrity: sha512-An0UCfG/rSiqtAIiBPO0Y9/zAnHUZxAMiCpTd5h2smgsj7GGmcenvrvww2cqNA8/4A5ZrD1gJpHN2mIHZQF+Mg==}
     engines: {node: '>=12'}
 
   /make-dir@2.1.0:
