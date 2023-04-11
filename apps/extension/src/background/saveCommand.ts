@@ -3,7 +3,11 @@ import { browser } from 'webextension-polyfill-ts';
 import { getCurrentTab } from './getCurrentTab';
 import type { RuntimeMessage } from '../RuntimeMessage';
 
-export const saveCommand = async () => {
+type SaveCommandArgs = {
+  remove?: boolean;
+};
+
+export const saveCommand = async ({ remove }: SaveCommandArgs = {}) => {
   const tab = await getCurrentTab();
 
   if (!tab) {
@@ -17,6 +21,7 @@ export const saveCommand = async () => {
     target: 'content',
     data: {
       type: 'savePage',
+      remove,
     },
   } satisfies RuntimeMessage);
 };

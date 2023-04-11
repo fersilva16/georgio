@@ -9,6 +9,9 @@
   "commands": {
     "save": {
       "description": "Save page"
+    },
+    "save_without_removing": {
+      "description": "Save page without removing"
     }
   },
   "action": {
