@@ -13,5 +13,15 @@ browser.runtime.onMessage.addListener((message: RuntimeMessage, sender) => {
 });
 
 browser.commands.onCommand.addListener((command: string) => {
-  if (command === 'save') saveCommand();
+  if (command === 'save') {
+    saveCommand({ remove: true });
+
+    return;
+  }
+
+  if (command === 'save_without_removing') {
+    saveCommand({ remove: false });
+
+    return;
+  }
 });

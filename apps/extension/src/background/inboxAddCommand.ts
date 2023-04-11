@@ -1,4 +1,4 @@
-import type { Runtime} from 'webextension-polyfill-ts';
+import type { Runtime } from 'webextension-polyfill-ts';
 import { browser } from 'webextension-polyfill-ts';
 
 import { inboxAdd } from '../inbox/inboxAdd';
@@ -8,7 +8,7 @@ export const inboxAddCommand = (
   { data }: InboxAddRuntimeMessage,
   sender: Runtime.MessageSender,
 ) => {
-  if (sender.tab?.id) browser.tabs.remove(sender.tab.id);
+  if (sender.tab?.id && data.remove) browser.tabs.remove(sender.tab.id);
 
   inboxAdd(data);
 };

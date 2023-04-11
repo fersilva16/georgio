@@ -8,5 +8,5 @@ browser.runtime.onMessage.addListener((message: RuntimeMessage) => {
 
   const { data } = message;
 
-  if (data?.type === 'savePage') savePage();
+  if (data?.type === 'savePage') savePage(message);
 });

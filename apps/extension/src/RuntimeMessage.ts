@@ -2,6 +2,7 @@ export type SavePageRuntimeMessage = {
   target: 'content';
   data: {
     type: 'savePage';
+    remove?: boolean;
   };
 };
 
@@ -11,6 +12,7 @@ export type InboxAddRuntimeMessage = {
     type: 'inboxAdd';
     title: string;
     url: string;
+    remove?: boolean;
   };
 };
 
