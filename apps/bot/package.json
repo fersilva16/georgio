@@ -2,7 +2,7 @@
   "name": "@georgio/bot",
   "author": "Fernando Silva <fernandonsilva16@gmail.com>",
   "scripts": {
-    "build": "swc ./src/**/* -d dist",
+    "build": "swc ./src/* -d dist",
     "deploy:fly": "fly deploy --detach",
     "dev": "tsx src/index.ts",
     "dev:watch": "tsx watch src/index.ts",
