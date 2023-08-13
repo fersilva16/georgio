@@ -1,5 +1,9 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 importers:
 
   .:
@@ -144,11 +148,11 @@ importers:
         specifier: 18.15.11
         version: 18.15.11
       '@types/node-cron':
-        specifier: ^3.0.7
-        version: 3.0.7
+        specifier: ^3.0.8
+        version: 3.0.8
       puppeteer:
         specifier: ^19.7.3
-        version: 19.7.3
+        version: 19.7.3(typescript@5.0.3)
       puppeteer-extra:
         specifier: ^3.3.6
         version: 3.3.6(puppeteer@19.7.3)
@@ -157,7 +161,7 @@ importers:
         version: 2.11.2(puppeteer-extra@3.3.6)
       tsup:
         specifier: ^6.6.0
-        version: 6.6.0(@swc/core@1.3.44)
+        version: 6.6.0(@swc/core@1.3.44)(typescript@5.0.3)
 
   apps/extension:
     dependencies:
@@ -1072,8 +1076,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
-  /@types/node-cron@3.0.7:
-    resolution: {integrity: sha512-9PuLtBboc/+JJ7FshmJWv769gDonTpItN0Ol5TMwclpSQNjVyB2SRxSKBcTtbSysSL5R7Oea06kTTFNciCoYwA==}
+  /@types/node-cron@3.0.8:
+    resolution: {integrity: sha512-+z5VrCvLwiJUohbRSgHdyZnHzAaLuD/E2bBANw+NQ1l05Crj8dIxb/kKK+OEqRitV2Wr/LYLuEBenGDsHZVV5Q==}
     dev: true
 
   /@types/node-fetch@2.6.2:
@@ -1477,8 +1481,10 @@ packages:
       ajv: 6.12.6
     dev: true
 
-  /ajv-formats@2.1.1:
+  /ajv-formats@2.1.1(ajv@8.12.0):
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -5008,7 +5014,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /puppeteer-core@19.7.3:
+  /puppeteer-core@19.7.3(typescript@5.0.3):
     resolution: {integrity: sha512-9Q5HahsstfoTnllcpNkxNu2z9J7V0Si5Mr5q90K6XSXwW1P8iqe8q3HzWViVuBuEYTSMZ2LaXXzTEYeoCzLEWg==}
     engines: {node: '>=14.14.0'}
     peerDependencies:
@@ -5025,6 +5031,7 @@ packages:
       https-proxy-agent: 5.0.1
       proxy-from-env: 1.1.0
       tar-fs: 2.1.1
+      typescript: 5.0.3
       unbzip2-stream: 1.4.3
       ws: 8.12.1
     transitivePeerDependencies:
@@ -5134,12 +5141,12 @@ packages:
       '@types/debug': 4.1.7
       debug: 4.3.4
       deepmerge: 4.3.0
-      puppeteer: 19.7.3
+      puppeteer: 19.7.3(typescript@5.0.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /puppeteer@19.7.3:
+  /puppeteer@19.7.3(typescript@5.0.3):
     resolution: {integrity: sha512-QEiRHPUAJp8VOK27zE6h2ne4xKVYibKUZpvjCuLYaAe8/2SOLKIgstF8wK3YaLgTkeruMrYfqZo+Qlw4ZkJDAQ==}
     requiresBuild: true
     dependencies:
@@ -5147,7 +5154,7 @@ packages:
       https-proxy-agent: 5.0.1
       progress: 2.0.3
       proxy-from-env: 1.1.0
-      puppeteer-core: 19.7.3
+      puppeteer-core: 19.7.3(typescript@5.0.3)
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -5389,7 +5396,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.11
       ajv: 8.12.0
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
     dev: true
 
@@ -5931,7 +5938,7 @@ packages:
     engines: {node: '>=0.6.x'}
     dev: false
 
-  /tsup@6.6.0(@swc/core@1.3.44):
+  /tsup@6.6.0(@swc/core@1.3.44)(typescript@5.0.3):
     resolution: {integrity: sha512-HxZE7Hj5yNxLFftCXdcJ+Jsax8dI4oKb0bt8fIvd1g/W0FZ46sU1pFBVo15WpOERFcEMH7Hykey/Q+hKO4s9RQ==}
     engines: {node: '>=14'}
     hasBin: true
@@ -5962,6 +5969,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.29.0
       tree-kill: 1.2.2
+      typescript: 5.0.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
