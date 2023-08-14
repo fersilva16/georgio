@@ -200,8 +200,8 @@ importers:
         specifier: ^8.0.1
         version: 8.0.1(webpack@5.88.2)
       dts-css-modules-loader:
-        specifier: ^2.0.0
-        version: 2.0.0(css-loader@6.7.3)
+        specifier: ^2.0.1
+        version: 2.0.1(css-loader@6.7.3)
       husky:
         specifier: ^8.0.0
         version: 8.0.3
@@ -2777,8 +2777,8 @@ packages:
     resolution: {integrity: sha512-IrPdXQsk2BbzvCBGBOTmmSH5SodmqZNt4ERAZDmW4CT+tL8VtvinqywuANaFu4bOMWki16nqf0e4oC0QIaDr/g==}
     engines: {node: '>=10'}
 
-  /dts-css-modules-loader@2.0.0(css-loader@6.7.3):
-    resolution: {integrity: sha512-eheqA1F2uVKs8A5BQTpPyg5wwLE2mictYjN0atJX/VLVpXDr9Xx1bqM9W5piQi9zp/CUkMBCBw+a2zr1TxFtQw==}
+  /dts-css-modules-loader@2.0.1(css-loader@6.7.3):
+    resolution: {integrity: sha512-blro23xBe6+gPZCW9AIwG2aL8ot2hyNHDeIUWVoyIYRGfv/5TWEMQNTnKGcuOf5iADyChU6Xbi5nzaj4YCChFQ==}
     peerDependencies:
       css-loader: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
     dependencies:
