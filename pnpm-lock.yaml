@@ -90,8 +90,8 @@ importers:
         specifier: ^12.0.0
         version: 12.0.0
       '@notionhq/client':
-        specifier: ^2.2.3
-        version: 2.2.3
+        specifier: ^2.2.11
+        version: 2.2.11
       '@sentry/node':
         specifier: ^7.64.0
         version: 7.64.0
@@ -166,8 +166,8 @@ importers:
   apps/extension:
     dependencies:
       '@notionhq/client':
-        specifier: ^2.2.3
-        version: 2.2.3
+        specifier: ^2.2.11
+        version: 2.2.11
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -891,8 +891,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@notionhq/client@2.2.3:
-    resolution: {integrity: sha512-ZqUzY0iRg/LIrwS+wzz/6osSB2nxIpmqdAtdUwzpcimc9Jlu1j85FeYdaU26Shr193CFrl2TLFeKqpk/APRQ4g==}
+  /@notionhq/client@2.2.11:
+    resolution: {integrity: sha512-yTKeVu0fB9PtlK9eQwN6y+MEq0J0vu1MPP7j5bme9+KTenH4OTcOAx/70+LgvN4Z4RSsymQxdXrtcLHMFN9ZuA==}
     engines: {node: '>=12'}
     dependencies:
       '@types/node-fetch': 2.6.2
