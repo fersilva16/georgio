@@ -4,7 +4,6 @@ import { app } from './app';
 import { config } from './config';
 import { discord } from './discord/discord';
 import { reportError } from './errors/reportError';
-import { habitSyncCronStart } from './habits/habitSyncCronStart';
 import { showEnrichCronStart } from './show/showEnrichCronStart';
 
 if (config.SENTRY_DSN) {
@@ -12,8 +11,6 @@ if (config.SENTRY_DSN) {
     dsn: config.SENTRY_DSN,
   });
 }
-
-habitSyncCronStart();
 
 showEnrichCronStart();
 
