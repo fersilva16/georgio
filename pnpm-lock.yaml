@@ -60,8 +60,8 @@ importers:
         specifier: ^2.0.1
         version: 2.0.1
       luxon:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       nano-staged:
         specifier: 0.8.0
         version: 0.8.0
@@ -108,8 +108,8 @@ importers:
         specifier: ^3.2.1
         version: 3.2.1
       luxon:
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       node-cron:
         specifier: ^3.0.2
         version: 3.0.2
@@ -4737,8 +4737,8 @@ packages:
     resolution: {integrity: sha512-Pn9cox5CsMYngeDbmChANltQl+5pi6XmTrraMSzhPmMBbmgcxmqWry0U3PGapCU1yB4/LqCcom7qhHZiF/jGfQ==}
     dev: false
 
-  /luxon@3.4.1:
-    resolution: {integrity: sha512-2USspxOCXWGIKHwuQ9XElxPPYrDOJHDQ5DQ870CoD+CxJbBnRDIBCfhioUJJjct7BKOy80Ia8cVstIcIMb/0+Q==}
+  /luxon@3.4.2:
+    resolution: {integrity: sha512-uBoAVCVcajsrqy3pv7eo5jEUz1oeLmCcnMv8n4AJpT5hbpN9lUssAXibNElpbLce3Mhm9dyBzwYLs9zctM/0tA==}
     engines: {node: '>=12'}
 
   /magic-bytes.js@1.0.15:
