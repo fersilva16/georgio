@@ -148,8 +148,8 @@ importers:
         specifier: 20.8.6
         version: 20.8.6
       '@types/node-cron':
-        specifier: ^3.0.9
-        version: 3.0.9
+        specifier: ^3.0.10
+        version: 3.0.10
       puppeteer:
         specifier: ^21.3.8
         version: 21.3.8(typescript@5.2.2)
@@ -1120,8 +1120,8 @@ packages:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
     dev: true
 
-  /@types/node-cron@3.0.9:
-    resolution: {integrity: sha512-P10Vf+oagnMbefD31nqjS/dpBM34qzfdpvIgVZwtwsNb0Hg2lDaPFeGcyGUJIqh3zHlDMwYXGeunGgMnswgnPg==}
+  /@types/node-cron@3.0.10:
+    resolution: {integrity: sha512-8thdLSpV7na8+bsmiyMH/KKQWOBg4WmoLInlGxWz7JJn8Mie+53QWaygSlc7f/AsMsCB5bBTVjoueAU6tRutTw==}
     dev: true
 
   /@types/node-fetch@2.6.2:
