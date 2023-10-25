@@ -151,11 +151,11 @@ importers:
         specifier: ^3.0.10
         version: 3.0.10
       puppeteer:
-        specifier: ^21.4.0
-        version: 21.4.0(typescript@5.2.2)
+        specifier: ^21.4.1
+        version: 21.4.1(typescript@5.2.2)
       puppeteer-extra:
         specifier: ^3.3.6
-        version: 3.3.6(puppeteer@21.4.0)
+        version: 3.3.6(puppeteer@21.4.1)
       puppeteer-extra-plugin-stealth:
         specifier: ^2.11.2
         version: 2.11.2(puppeteer-extra@3.3.6)
@@ -5439,8 +5439,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /puppeteer-core@21.4.0:
-    resolution: {integrity: sha512-ONYjYgHItm6i9WdJf+MnRTRPB4HegwPbPfi1jjNN0LCW3rnNich/5hXgZFcn2oWvgFc8DWLDIcwly7C8z+EvIw==}
+  /puppeteer-core@21.4.1:
+    resolution: {integrity: sha512-Lh0e+oGhUquxVOi1U701gTfFLFvw5gDBFh3CWpnfAvtItmyZKUce4R54VNfOJfi+KKnzhVPdB/lDrg65gdRIng==}
     engines: {node: '>=16.3.0'}
     dependencies:
       '@puppeteer/browsers': 1.8.0
@@ -5469,7 +5469,7 @@ packages:
         optional: true
     dependencies:
       debug: 4.3.4
-      puppeteer-extra: 3.3.6(puppeteer@21.4.0)
+      puppeteer-extra: 3.3.6(puppeteer@21.4.1)
       puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
       puppeteer-extra-plugin-user-preferences: 2.4.1(puppeteer-extra@3.3.6)
     transitivePeerDependencies:
@@ -5490,7 +5490,7 @@ packages:
     dependencies:
       debug: 4.3.4
       fs-extra: 10.1.0
-      puppeteer-extra: 3.3.6(puppeteer@21.4.0)
+      puppeteer-extra: 3.3.6(puppeteer@21.4.1)
       puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
       rimraf: 3.0.2
     transitivePeerDependencies:
@@ -5511,7 +5511,7 @@ packages:
     dependencies:
       debug: 4.3.4
       deepmerge: 4.3.0
-      puppeteer-extra: 3.3.6(puppeteer@21.4.0)
+      puppeteer-extra: 3.3.6(puppeteer@21.4.1)
       puppeteer-extra-plugin: 3.2.3(puppeteer-extra@3.3.6)
       puppeteer-extra-plugin-user-data-dir: 2.4.1(puppeteer-extra@3.3.6)
     transitivePeerDependencies:
@@ -5533,12 +5533,12 @@ packages:
       '@types/debug': 4.1.7
       debug: 4.3.4
       merge-deep: 3.0.3
-      puppeteer-extra: 3.3.6(puppeteer@21.4.0)
+      puppeteer-extra: 3.3.6(puppeteer@21.4.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /puppeteer-extra@3.3.6(puppeteer@21.4.0):
+  /puppeteer-extra@3.3.6(puppeteer@21.4.1):
     resolution: {integrity: sha512-rsLBE/6mMxAjlLd06LuGacrukP2bqbzKCLzV1vrhHFavqQE/taQ2UXv3H5P0Ls7nsrASa+6x3bDbXHpqMwq+7A==}
     engines: {node: '>=8'}
     peerDependencies:
@@ -5556,19 +5556,19 @@ packages:
       '@types/debug': 4.1.7
       debug: 4.3.4
       deepmerge: 4.3.0
-      puppeteer: 21.4.0(typescript@5.2.2)
+      puppeteer: 21.4.1(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /puppeteer@21.4.0(typescript@5.2.2):
-    resolution: {integrity: sha512-KkiDe39NJxlw7fyiN6fieM9SVsewzt037nUZRoffNuFtYdAl5rRLVtleBuVZ5i1swK/R4CmA6Pbka/ytpFCu4Q==}
+  /puppeteer@21.4.1(typescript@5.2.2):
+    resolution: {integrity: sha512-opJqQeYMjAB3ICG8lCF3wtSs9k05dozmrEMrHgo3ZWbISiy8qbv/yAJz/6Io221qSh3yURfVf6Z7crrlzKZjLQ==}
     engines: {node: '>=16.3.0'}
     requiresBuild: true
     dependencies:
       '@puppeteer/browsers': 1.8.0
       cosmiconfig: 8.3.6(typescript@5.2.2)
-      puppeteer-core: 21.4.0
+      puppeteer-core: 21.4.1
     transitivePeerDependencies:
       - bufferutil
       - encoding
