@@ -139,8 +139,8 @@ importers:
         specifier: ^3.1.4
         version: 3.1.4
       '@types/koa__router':
-        specifier: ^12.0.2
-        version: 12.0.2
+        specifier: ^12.0.3
+        version: 12.0.3
       '@types/luxon':
         specifier: 3.3.3
         version: 3.3.3
@@ -1097,8 +1097,8 @@ packages:
       '@types/node': 20.8.9
     dev: true
 
-  /@types/koa__router@12.0.2:
-    resolution: {integrity: sha512-xoiDqyIggk1hPOhD980SMhPYqUssvHkIh6CV/j00WemrYqqNM1jMellWJofEKm0ZbgJUyWunFvCHil20dQEhMg==}
+  /@types/koa__router@12.0.3:
+    resolution: {integrity: sha512-5YUJVv6NwM1z7m6FuYpKfNLTZ932Z6EF6xy2BbtpJSyn13DKNQEkXVffFVSnJHxvwwWh2SAeumpjAYUELqgjyw==}
     dependencies:
       '@types/koa': 2.13.10
     dev: true
