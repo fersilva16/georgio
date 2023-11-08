@@ -136,8 +136,8 @@ importers:
         specifier: ^2.13.11
         version: 2.13.11
       '@types/koa-logger':
-        specifier: ^3.1.4
-        version: 3.1.4
+        specifier: ^3.1.5
+        version: 3.1.5
       '@types/koa__router':
         specifier: ^12.0.4
         version: 12.0.4
@@ -1078,8 +1078,8 @@ packages:
       '@types/koa': 2.13.11
     dev: true
 
-  /@types/koa-logger@3.1.4:
-    resolution: {integrity: sha512-6Bh0rQe/F4c/GbP7r9PHncmmSJfnEL+sBi0eFqpqyqRhq0BsUEhDiOfvb9WnJfLgCy72vYIQ5bXKyUSI6S5aEw==}
+  /@types/koa-logger@3.1.5:
+    resolution: {integrity: sha512-N4f9GRdokJ/gLiCSvd3GGar/D74HJWzuvSJiruayCsz2e7gGkG6DQaque+kM3xo6LjyCRVUUt9HHJCSMjsXrIA==}
     dependencies:
       '@types/koa': 2.13.11
     dev: true
