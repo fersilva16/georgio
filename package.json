@@ -45,7 +45,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "hygen": "^6.2.11",
     "inflection": "^3.0.0",
-    "luxon": "3.4.3",
+    "luxon": "3.4.4",
     "nano-staged": "0.8.0",
     "node-fetch": "^3.3.2",
     "prettier": "3.0.3",
