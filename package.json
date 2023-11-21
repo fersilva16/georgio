@@ -52,7 +52,7 @@
     "rrule": "^2.8.1",
     "simple-git-hooks": "2.9.0",
     "tsx": "^4.1.4",
-    "typescript": "5.2.2"
+    "typescript": "5.3.2"
   },
   "nano-staged": {
     "*": "prettier --ignore-unknown --write",
