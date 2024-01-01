@@ -16,7 +16,7 @@
     "@sentry/node": "^7.91.0",
     "discord.js": "^14.14.1",
     "dotenv-safe": "^8.2.0",
-    "koa": "^2.14.2",
+    "koa": "^2.15.0",
     "koa-logger": "^3.2.1",
     "luxon": "3.4.4",
     "node-cron": "^3.0.3",
