@@ -188,8 +188,8 @@ importers:
         specifier: ^18.2.18
         version: 18.2.18
       copy-webpack-plugin:
-        specifier: ^12.0.0
-        version: 12.0.0(webpack@5.89.0)
+        specifier: ^12.0.1
+        version: 12.0.1(webpack@5.89.0)
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
@@ -2568,8 +2568,8 @@ packages:
       run-queue: 1.0.3
     dev: true
 
-  /copy-webpack-plugin@12.0.0(webpack@5.89.0):
-    resolution: {integrity: sha512-WQfxZKgoRB94/g0BP/cjADvE6jXQKoSk0lFFeIC5HZlE1JuabYPwhQUtOZsGI0cI+QMsi6vhdIDy4eNXKcTgFg==}
+  /copy-webpack-plugin@12.0.1(webpack@5.89.0):
+    resolution: {integrity: sha512-dhMfjJMYKDmmbG6Yn2pRSs1g8FgeQRtbE/JM6VAM9Xouk3KO1UVrwlLHLXxaI5F+o9WgnRfhFZzY9eV34O2gZQ==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
       webpack: ^5.1.0
