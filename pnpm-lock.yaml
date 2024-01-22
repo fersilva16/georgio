@@ -15,8 +15,8 @@ importers:
         specifier: ^1.3.104
         version: 1.3.104
       '@types/luxon':
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       '@typescript-eslint/eslint-plugin':
         specifier: 5.62.0
         version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -142,8 +142,8 @@ importers:
         specifier: ^12.0.4
         version: 12.0.4
       '@types/luxon':
-        specifier: 3.4.1
-        version: 3.4.1
+        specifier: 3.4.2
+        version: 3.4.2
       '@types/node':
         specifier: 20.11.5
         version: 20.11.5
@@ -1419,8 +1419,8 @@ packages:
       '@types/koa': 2.14.0
     dev: true
 
-  /@types/luxon@3.4.1:
-    resolution: {integrity: sha512-m1KQEZZCITtheRhMVq5jDvAl0HwFhunLs7x6tpFFvUTJpKfmewS/Ymg+YA97/s8w1I1nC4pJyi0aAnn+vf3yew==}
+  /@types/luxon@3.4.2:
+    resolution: {integrity: sha512-TifLZlFudklWlMBfhubvgqTXRzLDI5pCbGa4P8a3wPyUQSW+1xQ5eDsreP9DWHX3tjq1ke96uYG/nwundroWcA==}
     dev: true
 
   /@types/mime@3.0.1:
