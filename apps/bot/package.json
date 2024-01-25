@@ -34,7 +34,7 @@
     "@types/luxon": "3.4.2",
     "@types/node": "20.11.5",
     "@types/node-cron": "^3.0.11",
-    "puppeteer": "^21.7.0",
+    "puppeteer": "^21.9.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "tsup": "^8.0.1"
